@@ -1,0 +1,32 @@
+.first-row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: rgb(107, 3, 211);
+  border-radius: 2%;
+}
+.header{
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+.list{
+  display: flex;
+  justify-content: center;
+}
+
+.main{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.btn{
+  margin-left: 10px;
+  padding: 10px;
+}
+
+.check{
+  /* text-decoration-color: gray; */
+  cursor: pointer;
+}

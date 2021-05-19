@@ -10,7 +10,8 @@ class TodoController extends Controller
 {
     public function index()
     {
-        return view('todos.index');
+        $todos = Todo::orderby('completed')->get();
+        return view('todos.index', compact('todos'));
     }
 
     public function create()
@@ -23,5 +24,16 @@ class TodoController extends Controller
         Todo::create($request->all());
         // $request->session()->flash('message', 'TODO successfully created.');
         return redirect()->back()->with('message', 'Todo created successfully.');
+    }
+
+    public function edit(Todo $todo)
+    {
+        return view('todos.edit', compact('todo'));
+    }
+
+    public function update(TodoCreateRequest $request, Todo $todo)
+    {
+        $todo->update($request->all());
+        return redirect(route('todo.index'))->with('message', 'Updated');
     }
 }

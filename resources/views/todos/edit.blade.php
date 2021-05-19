@@ -12,13 +12,13 @@
             </ul>
         </div>
     @endif
-    <form method="POST" action="{{ route('todo.store') }}">
+    <form method="POST" action="{{ route('todo.update', $todo->id) }}">
         @csrf
+        @method('PUT')
         <div class="m-3">
-            <h1>What next you need To-Do</h1>
-            <input type="text" name="title" class="form-control" id="title">
+            <h1>Update this todo list</h1>
+            <input type="text" name="title" value="{{ $todo->title }}" class="form-control" id="title">
         </div>
-        <button type="submit" class="btn btn-primary m-3">Create</button>
+        <button type="submit" class="btn btn-primary m-3">Update</button>
     </form>
-
 @endsection
