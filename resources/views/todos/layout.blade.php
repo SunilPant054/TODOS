@@ -16,7 +16,7 @@
 
 <body>
     <div class="container">
-        <div class="first-row border">
+        <div class="first-row border border-primary">
             @yield('content')
         </div>
     </div>

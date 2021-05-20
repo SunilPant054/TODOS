@@ -36,4 +36,10 @@ class TodoController extends Controller
         $todo->update($request->all());
         return redirect(route('todo.index'))->with('message', 'Updated');
     }
+
+    public function complete(Todo $todo)
+    {
+        $todo->update(['completed' => true]);
+        return redirect()->back()->with('message', 'Task Marked As Completed!');
+    }
 }

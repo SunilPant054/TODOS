@@ -1,13 +1,22 @@
-.first-row{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: rgb(107, 3, 211);
-  border-radius: 2%;
+p{
+  margin-right: auto;
+  padding: 10px;
 }
+
+.first-row{
+  width: 65%;
+  margin: 10%;
+padding: 16px;
+}
+
+.container{
+  width: 45%;
+  padding: 70px;
+}
+
 .header{
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  justify-content: space-between;
   margin: 30px;
 }
 .list{
@@ -15,11 +24,6 @@
   justify-content: center;
 }
 
-.main{
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-}
 
 .btn{
   margin-left: 10px;
@@ -27,6 +31,5 @@
 }
 
 .check{
-  /* text-decoration-color: gray; */
   cursor: pointer;
 }

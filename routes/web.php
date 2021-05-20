@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TodoController;
+use Illuminate\Routing\RouteUrlGenerator;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,4 @@ Route::get('/todos/create', 'TodoController@create')->name('todo.create');
 Route::post('/todos', 'TodoController@store')->name('todo.store');
 Route::get('/todos/{todo}/edit', 'TodoController@edit')->name('todo.edit');
 Route::put('/todos/{todo}/update', 'TodoController@update')->name('todo.update');
+Route::put('/todos/{todo}/complete', 'TodoController@complete')->name('todo.complete');
