@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Todo;
 use Illuminate\Http\Request;
 use App\Http\Requests\TodoCreateRequest;
+use App\User;
 
 class TodoController extends Controller
 {
     public function index()
     {
-        $todos = Todo::orderby('completed')->get();
+        $todos = auth()->user()->todos()->orderby('completed')->get();
+        // $todos = Todo::orderby('completed')->get();
         return view('todos.index', compact('todos'));
     }
 
@@ -21,6 +23,8 @@ class TodoController extends Controller
 
     public function store(TodoCreateRequest $request)
     {
+        $userId = auth()->id;
+        $request['user_id'] = $userId;
         Todo::create($request->all());
         // $request->session()->flash('message', 'TODO successfully created.');
         return redirect()->back()->with('message', 'Todo created successfully.');
