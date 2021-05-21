@@ -3,6 +3,18 @@ p{
   padding: 10px;
 }
 
+.fas{
+  font-size: x-large;
+}
+
+.icon{
+  padding: 16px;
+}
+
+.button{
+  padding: 10px;
+}
+
 .first-row{
   width: 65%;
   margin: 10%;
@@ -20,8 +32,8 @@ padding: 16px;
   margin: 30px;
 }
 .list{
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  justify-content: space-between;
 }
 
 

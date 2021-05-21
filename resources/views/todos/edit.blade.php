@@ -20,5 +20,6 @@
             <input type="text" name="title" value="{{ $todo->title }}" class="form-control" id="title">
         </div>
         <button type="submit" class="btn btn-primary m-3">Update</button>
+        <a href="{{ route('todo.index') }}" class="btn btn-success">Back</a>
     </form>
 @endsection
