@@ -31,6 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/todos/{todo}/complete', 'TodoController@complete')->name('todo.complete');
     Route::put('/todos/{todo}/incomplete', 'TodoController@incomplete')->name('todo.incomplete');
     Route::delete('/todos/{todo}/delete', 'TodoController@destroy')->name('todo.destroy');
+    Route::get('/todos/{todo}', 'TodoController@show')->name('todo.show');
 });
 
 Auth::routes();

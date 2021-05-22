@@ -26,9 +26,11 @@
                     @include('todos.partials.completeButton')
                 </div>
                 @if ($todo->completed)
-                    <p class="text-decoration-line-through">{{ $todo->title }}</p>
+                    <a href="{{ route('todo.show', $todo->id) }}"
+                        class="text-decoration-line-through cursor-pointer">{{ $todo->title }}</a>
                 @else
-                    <p>{{ $todo->title }}</p>
+                    <a href="{{ route('todo.show', $todo->id) }}" class="cursor-pointer"
+                        style="text-decoration:none">{{ $todo->title }}</p>
                 @endif
 
                 <div>
@@ -37,9 +39,9 @@
                     </a>
 
                     <span class="fas fa-trash" onclick="event.preventDefault();
-                                if(confirm('Delete the selected task?')){
-                                    document.getElementById('form-delete-{{ $todo->id }}')
-                                    .submit()}" />
+                                                        if(confirm('Delete the selected task?')){
+                                                            document.getElementById('form-delete-{{ $todo->id }}')
+                                                            .submit()}" />
                     <form style="display:none" id="{{ 'form-delete-' . $todo->id }}" method="POST"
                         action="{{ route('todo.destroy', $todo->id) }}">
                         @csrf

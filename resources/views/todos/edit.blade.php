@@ -19,6 +19,9 @@
             <h1>Update this todo list</h1>
             <input type="text" name="title" value="{{ $todo->title }}" class="form-control" id="title">
         </div>
+        <div class="px-3">
+            <textarea name="description" id="" placeholder="Description">{{ $todo->description }}</textarea>
+        </div>
         <button type="submit" class="btn btn-primary m-3">Update</button>
         <a href="{{ route('todo.index') }}" class="btn btn-success">Back</a>
     </form>

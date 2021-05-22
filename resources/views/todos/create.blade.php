@@ -16,8 +16,10 @@
         @csrf
         <div class="m-3">
             <h1>What next you need To-Do</h1>
-            <input type="text" name="title" class="form-control" id="title">
-
+            <input type="text" name="title" class="form-control" id="title" placeholder="Title">
+        </div>
+        <div class="px-3">
+            <textarea name="description" id="" placeholder="Description"></textarea>
         </div>
         <button type="submit" class="btn btn-primary m-3">Create</button>
         <a href="{{ route('todo.index') }}" class="btn btn-success">Back</a>

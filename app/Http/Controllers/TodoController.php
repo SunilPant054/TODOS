@@ -23,7 +23,7 @@ class TodoController extends Controller
 
     public function store(TodoCreateRequest $request)
     {
-        $userId = auth()->id;
+        $userId = auth()->id();
         $request['user_id'] = $userId;
         Todo::create($request->all());
         // $request->session()->flash('message', 'TODO successfully created.');
@@ -57,5 +57,10 @@ class TodoController extends Controller
     {
         $todo->delete();
         return redirect()->back()->with('message', 'Task Deleted!');
+    }
+
+    public function show(Todo $todo)
+    {
+        return view('todos.show', compact('todo'));
     }
 }
